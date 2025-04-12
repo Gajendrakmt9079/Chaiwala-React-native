@@ -1,131 +1,86 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, {useEffect, useState, createContext, useContext} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {CartProvider} from './src/Api/Cartcontext';
+import HomePage from './src/components/home';
+import FirstIntro from './src/components/firstInstro';
+import LoginScreen from './src/components/Login';
+import SignInScreen from './src/components/Singing';
+import ProfileScreen from './src/components/ProfileScreen';
+import AddressComponent from './src/components/Address';
+import Getotp from './src/components/Getotp';
+import Mapview from './src/components/mapview';
+import ProductDetail from './src/components/productdetail';
+import CartScreen from './src/components/CartScreen';
+import SubscriptionScreen from './src/components/Plans';
+import CheckoutConfirmation from './src/components/Cheackout';
+import Loading from './src/components/Loadingscreen';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Stack = createNativeStackNavigator();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+// Create Auth Context
+const AuthContext = createContext(null);
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
+  const [userToken, setUserToken] = useState<string | null>(null);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const token = await AsyncStorage.getItem('authToken');
+
+        setUserToken(token);
+      } catch (error) {
+        console.error('Error fetching auth token:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (isLoading) {
+    return <Loading navigation={undefined} />;
+  }
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <AuthContext.Provider value={{userToken, setUserToken}}>
+      <CartProvider>
+        <NavigationContainer>
+          <Stack.Navigator >
+            {userToken ? (
+              <>
+                <Stack.Screen name="Home" component={HomePage} options={{ headerShown: false }} />
+                <Stack.Screen name="Profile" component={ProfileScreen} />
+                <Stack.Screen name="Address" component={AddressComponent} />
+                <Stack.Screen
+                  name="Checkout"
+                  component={CheckoutConfirmation}
+                />
+                <Stack.Screen name="Order Tracking" component={Mapview} />
+                <Stack.Screen name="Plans" component={SubscriptionScreen} />
+                <Stack.Screen name="DetailsScreen" component={ProductDetail} />
+                <Stack.Screen name="Cart" component={CartScreen} />
+              </>
+            ) : (
+              <>
+                <Stack.Screen name="Welcome" component={FirstIntro} />
+                <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="SignIn" component={SignInScreen} />
+                <Stack.Screen name="Verify" component={Getotp}/>
+                <Stack.Screen name="Address" component={AddressComponent}/>
+              </>
+            )}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </CartProvider>
+    </AuthContext.Provider>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the reccomendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
-  return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+// Custom Hook for Auth
+export const useAuth = () => useContext(AuthContext);
